@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatToFeel</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body
+    class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <div class="w-full max-w-md mx-auto">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6 sm:p-8">
+            <header class="text-center mb-6">
+                <h1 class="text-3xl sm:text-4xl font-bold text-blue-600 dark:text-blue-400">WhatToFeel</h1>
+                <p class="text-gray-600 dark:text-gray-400 mt-2">Select your mood and let us guide your day!</p>
+            </header>
+
+            <main>
+                <!-- Weather Selection -->
+                <div class="mb-4">
+                    <label for="mood-select" class="sr-only">Your Mood</label>
+                    <select id="mood-select"
+                        class="w-full p-3 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-700 text-gray-800 dark:text-gray-200 focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                        <option value="">-- Select Mood --</option>
+                        <option value="happy">😊 Happy</option>
+                        <option value="sad">😢 Sad</option>
+                        <option value="stressed">😫 Stressed</option>
+                        <option value="energetic">⚡ Energetic</option>
+                    </select>
+                </div>
+
+                <!-- Primary Action Button -->
+                <button id="show-suggestion-btn"
+                    class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 active:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:focus:ring-offset-gray-800 transition-colors duration-200">
+                    Show Suggestion
+                </button>
+
+                <!-- Suggestion Display Area (initially hidden) -->
+                <div id="suggestion-container" class="mt-6 text-center hidden">
+                    <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-xl">
+                        <p class="text-lg sm:text-xl font-medium text-blue-800 dark:text-blue-300" id="suggestion-text">
+                        </p>
+                    </div>
+                    <button id="new-suggestion-btn"
+                        class="mt-4 bg-gray-200 dark:bg-gray-600 text-gray-800 dark:text-gray-200 font-bold py-2 px-6 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-500 active:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 dark:focus:ring-offset-gray-800 transition-colors duration-200">
+                        New Suggestion
+                    </button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Custom Error Modal (initially hidden) -->
+    <div id="error-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 modal-overlay opacity-0 pointer-events-none">
+        <div id="modal-content"
+            class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 w-full max-w-sm text-center transform scale-95 opacity-0">
+            <h2 class="text-xl font-bold text-red-600 dark:text-red-400">Oops!</h2>
+            <p id="error-message" class="my-4 text-gray-700 dark:text-gray-300"></p>
+            <button id="close-modal-btn"
+                class="bg-red-500 text-white font-bold py-2 px-6 rounded-lg hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 dark:focus:ring-offset-gray-800">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
